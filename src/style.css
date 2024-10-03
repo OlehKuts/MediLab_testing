@@ -28,7 +28,7 @@ svg {
 
 @media (max-width: 675px) {
   .card {
-    margin: 120px auto 20px auto;
+    margin: 40px auto 20px auto;
     display: flex;
     justify-content: center;
     align-items: center;
