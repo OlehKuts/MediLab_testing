@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/MediLab_testing/static/css/main.0ce504f4.css",
+    "main.js": "/MediLab_testing/static/js/main.1fbff6c0.js",
+    "index.html": "/MediLab_testing/index.html",
+    "main.0ce504f4.css.map": "/MediLab_testing/static/css/main.0ce504f4.css.map",
+    "main.1fbff6c0.js.map": "/MediLab_testing/static/js/main.1fbff6c0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0ce504f4.css",
+    "static/js/main.1fbff6c0.js"
+  ]
+}
