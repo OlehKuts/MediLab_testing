@@ -38,7 +38,7 @@ svg {
     background-color: white;
     height: 350px;
     width: 350px;
-    transition: 160ms; /*animation effect*/
+    transition: 200ms; /*animation effect*/
     transform: perspective(100px) rotateY(var(--rotate-y, 0))
       translateY(var(--translate-y, 0)); /*perspective increase flip-effect*/
     /*translateY - give a move up-down effect*/
@@ -61,7 +61,7 @@ svg {
   .card .front,
   .card .back {
     color:  dimgray;
-    font-size: 28px;
+    font-size: 24px;
     position: absolute;
     padding: 1rem;
     backface-visibility: hidden; /*hide all transformed items*/
@@ -88,7 +88,7 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   background-color: white;
   width: 160px;
   border: 1px solid blue;
@@ -131,7 +131,7 @@ svg {
   .pre_testing_alert {
     margin-top: 170px ;
     margin-bottom: 20px;
-    font-size: 30px;
+    font-size: 24px;
   }
   h1 {
     text-align: center;
