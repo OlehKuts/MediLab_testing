@@ -29,7 +29,7 @@ export const App = () => {
     </div>
     {!startTesting ? <div className="container">
       {!finalAlert ? <>
-      <div className="pre_testing_alert">Ви прослухали лекцію за 03.10.2024 року. Пропонуємо Вам пройти тестування!
+      <div className="pre_testing_alert">Пропонуємо Вам пройти тестування за 08.10.2024!
       </div> <div> <div className="option startBtn" onClick={() => setStartTesting(true)}>Почати</div></div>
       </>: <><div className="pre_testing_alert">Щиро дякую за відповіді! <BoyIcon /><FlowerIcon /></div>
       </>}
