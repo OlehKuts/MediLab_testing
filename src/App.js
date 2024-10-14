@@ -3,14 +3,21 @@ import {HamburgerIcon, LogoIcon, BoyIcon, FlowerIcon}  from "./icons";
 import { Flashcard } from "./Flashcard";
 import { questions } from "./question";
 export const App = () => {
-
+  const mutedQuestions = questions.map(item => {
+    const newOptions = item.options.map(option => {
+      const correctness = option === item.correct ? true : false;
+      return {optionName: option, isCorrect: correctness}
+    })
+    return {...item, options: newOptions}
+  })
   const [startTesting, setStartTesting] = useState(false);
   const [flip, setFlip] = useState(false);
-  const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
+  const [currentQuestion, setCurrentQuestion] = useState(mutedQuestions[0]);
   const [btnColor, setBtnColor]= useState('white')
   const [showNextBtn, setShowNextBtn] = useState(false);
   const [finalAlert, setFinalAlert]= useState(false);
-  
+  const [clickedId, setClickedId] = useState(null);
+  // console.log(mutedQuestions)
   return (
     <>
     <div className="notification">For mobile devices only!</div>
@@ -36,13 +43,19 @@ export const App = () => {
       
     </div> : null}
     { startTesting ? <div className="container">
-      <Flashcard flashcard={questions[currentQuestion.id]} flip={flip}/>
+      <Flashcard flashcard={mutedQuestions[currentQuestion.id]} flip={flip}/>
       
       <div className="options">
-      {currentQuestion.options.map((item, idx) => <div key={idx} style={{backgroundColor: currentQuestion.correct === item ? `${btnColor}` : `white`}}className="option" 
+      {currentQuestion.options.map((item, idx) => <div  data-id={idx} key={idx} 
+      style={{backgroundColor: item.isCorrect ? `${btnColor}` : clickedId === idx ? `yellow` : "white"}} className="option"
+       id={true ? "pending" : ""}
       onClick={() => {
-        if(currentQuestion.correct !== item) return;
-        setBtnColor("yellow");
+        setTimeout(() => {
+          setClickedId(idx);
+        }, 0);
+        if(item.isCorrect) {
+          setBtnColor("yellow");
+        }
         setTimeout(() => {
           setFlip(true);
           setBtnColor('aquamarine');
@@ -50,11 +63,12 @@ export const App = () => {
         setTimeout(() => {
         setShowNextBtn(true);
         }, 2500);
-        }}>{item}</div>)}
+        }}>{item.optionName}</div>)}
       </div>
       <div className="nextDiv"><div className="option nextBtn" style={{display: showNextBtn ? `block`: `none`}} onClick={() => {
+        setClickedId(null);
         setFlip(false)
-        setCurrentQuestion(prev => questions[prev.id + 1]);
+        setCurrentQuestion(prev => mutedQuestions[prev.id + 1]);
         setBtnColor(`white`);
         setShowNextBtn(false);
         if (currentQuestion.id === 4) {

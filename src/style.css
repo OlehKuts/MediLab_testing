@@ -24,8 +24,9 @@ svg {
   text-align: center;
   font-size: 5rem;
 }
-
-
+#pending {
+  background-color: orange;
+}
 @media (max-width: 675px) {
   .card {
     margin: 10px auto 20px auto;
