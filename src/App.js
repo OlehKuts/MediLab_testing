@@ -17,7 +17,8 @@ export const App = () => {
   const [showNextBtn, setShowNextBtn] = useState(false);
   const [finalAlert, setFinalAlert]= useState(false);
   const [clickedId, setClickedId] = useState(null);
-  // console.log(mutedQuestions)
+  const date = new Date();
+  const stringifiedDate = `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
   return (
     <>
     <div className="notification">For mobile devices only!</div>
@@ -36,7 +37,7 @@ export const App = () => {
     </div>
     {!startTesting ? <div className="container">
       {!finalAlert ? <>
-      <div className="pre_testing_alert">Пропонуємо Вам пройти тестування за 08.10.2024!
+      <div className="pre_testing_alert">Пропонуємо Вам пройти тестування за {stringifiedDate}!
       </div> <div> <div className="option startBtn" onClick={() => setStartTesting(true)}>Почати</div></div>
       </>: <><div className="pre_testing_alert">Щиро дякую за відповіді! <BoyIcon /><FlowerIcon /></div>
       </>}
