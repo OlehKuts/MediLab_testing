@@ -17,6 +17,8 @@ export const App = () => {
   const [showNextBtn, setShowNextBtn] = useState(false);
   const [finalAlert, setFinalAlert]= useState(false);
   const [clickedId, setClickedId] = useState(null);
+  const [points, setPoints] = useState(0);
+  const [maxPoints, setMaxPoints] = useState(0);
   const date = new Date();
   const stringifiedDate = `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
   return (
@@ -49,20 +51,21 @@ export const App = () => {
       <div className="options">
       {currentQuestion.options.map((item, idx) => <div  data-id={idx} key={idx} 
       style={{backgroundColor: item.isCorrect ? `${btnColor}` : clickedId === idx ? `yellow` : "white"}} className="option"
-       id={true ? "pending" : ""}
       onClick={() => {
         setTimeout(() => {
           setClickedId(idx);
+          setShowNextBtn(true);
         }, 0);
         if(item.isCorrect) {
           setBtnColor("yellow");
+          setPoints(prev => prev + 20)
         }
         setTimeout(() => {
           setFlip(true);
           setBtnColor('aquamarine');
         }, 1500);
         setTimeout(() => {
-        setShowNextBtn(true);
+        setMaxPoints(prev => prev + 20)
         }, 2500);
         }}>{item.optionName}</div>)}
       </div>
@@ -76,7 +79,11 @@ export const App = () => {
           setStartTesting(false);
           setFinalAlert(true)
         }
-      }}>{currentQuestion.id === 4 ? 'Завершити' : 'Далі'}</div></div>
+      }}>{currentQuestion.id === 4 ? 'Завершити' : 'Далі'}</div>
+      <div className="option nextBtn" style={{display: !showNextBtn ? `block`: `none`}}>
+          {points} з {maxPoints} балів
+      </div>
+      </div>
     </div> : null}
 
   </>
