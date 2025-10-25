@@ -41,7 +41,7 @@ export const App = () => {
       {!finalAlert ? <>
       <div className="pre_testing_alert">Пропонуємо Вам пройти тестування за {stringifiedDate}!
       </div> <div> <div className="option startBtn" onClick={() => setStartTesting(true)}>Почати</div></div>
-      </>: <><div className="pre_testing_alert">Щиро дякую за відповіді! <BoyIcon /><FlowerIcon /></div>
+      </>: <><div className="pre_testing_alert">Софіє, дякую, що ти є в моєму житті! <BoyIcon /><FlowerIcon /></div>
       </>}
       
     </div> : null}
