@@ -39,9 +39,10 @@ export const App = () => {
     </div>
     {!startTesting ? <div className="container">
       {!finalAlert ? <>
-      <div className="pre_testing_alert">Вже {stringifiedDate}. Пройшов місяць, як ми зустрічаємося. Пропоную тобі пройти цікаве тестування!
+      <div className="pre_testing_alert">Вже {stringifiedDate}. Пройшов місяць, як ми зустрічаємося. Софіє, пропоную тобі пройти цікаве тестування!
       </div> <div> <div className="option startBtn" onClick={() => setStartTesting(true)}>Почати</div></div>
-      </>: <><div className="pre_testing_alert">Софіє, дякую, що ти є в моєму житті! <BoyIcon /><FlowerIcon /></div>
+      </>: <><div className="pre_testing_alert">Дякую, що ти є в моєму житті! <BoyIcon /><FlowerIcon /></div>
+      <div><button>Отримати приз</button></div>
       </>}
       
     </div> : null}
