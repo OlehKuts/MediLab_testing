@@ -1,5 +1,5 @@
-import { useState } from "react"
-import {HamburgerIcon, LogoIcon, BoyIcon, FlowerIcon}  from "./icons";
+import { useEffect, useState } from "react"
+import {HamburgerIcon, LogoIcon, BoyIcon, FlowerIcon, BearIcon}  from "./icons";
 import { Flashcard } from "./Flashcard";
 import { questions } from "./question";
 export const App = () => {
@@ -21,6 +21,10 @@ export const App = () => {
   const [maxPoints, setMaxPoints] = useState(0);
   const date = new Date();
   const stringifiedDate = `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
+  const [showBear, setShowBear] = useState(false)
+  useEffect(() => {
+    console.log(showBear)
+  }, [showBear])
   return (
     <>
     <div className="notification">For mobile devices only!</div>
@@ -41,10 +45,12 @@ export const App = () => {
       {!finalAlert ? <>
       <div className="pre_testing_alert">Вже {stringifiedDate}. Пройшов місяць, як ми зустрічаємося. Софіє, пропоную тобі пройти цікаве тестування!
       </div> <div> <div className="option startBtn" onClick={() => setStartTesting(true)}>Почати</div></div>
-      </>: <><div className="pre_testing_alert">Дякую, що ти є в моєму житті! <BoyIcon /><FlowerIcon /></div>
-      <div><button>Отримати приз</button></div>
-      </>}
-      
+      </>: null}
+      {finalAlert && !showBear ? <><div className="pre_testing_alert"><div>Дякую, що ти є в моєму житті!</div><BoyIcon /><FlowerIcon /></div>
+      <div><div className="option startBtn" onClick={() => setShowBear(true)}>Забрати приз</div></div>
+      </>: null}
+      {showBear ? <><div className="pre_testing_alert"> 
+        <div>Квіти швидко в'януть, а ведмедик тішитиме кохану людину дуже довго.</div><BearIcon /></div></> : null }
     </div> : null}
     { startTesting ? <div className="container">
       <Flashcard flashcard={mutedQuestions[currentQuestion.id]} flip={flip}/>
