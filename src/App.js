@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import {HamburgerIcon, LogoIcon, BoyIcon, FlowerIcon, BearIcon}  from "./icons";
 import { Flashcard } from "./Flashcard";
-import { questions } from "./question";
+import { greeting, questions, gratitude, finalPhrase, lorem10, testQuestions } from "./constants";
 export const App = () => {
-  const mutedQuestions = questions.map(item => {
+  const mutedQuestions = testQuestions.map(item => { // don't forget change back to the questions
     const newOptions = item.options.map(option => {
       const correctness = option === item.correct ? true : false;
       return {optionName: option, isCorrect: correctness}
@@ -27,13 +27,14 @@ export const App = () => {
   }, [showBear])
   return (
     <>
-    <div className="notification">For mobile devices only!</div>
+    <div className="notification">For mobile devices only!
+    </div>
     <div className="frame">
       <div className="list">
         <div className="head">
           <div className="title">
           <div><LogoIcon /></div>
-           <div>Medilab</div>
+           <div>S&O</div>
            <div>
 <HamburgerIcon />
 </div>
@@ -43,14 +44,14 @@ export const App = () => {
     </div>
     {!startTesting ? <div className="container">
       {!finalAlert ? <>
-      <div className="pre_testing_alert">Вже {stringifiedDate}. Пройшов місяць, як ми зустрічаємося. Софіє, пропоную тобі пройти цікаве тестування!
+      <div className="pre_testing_alert">Вже {stringifiedDate}. {lorem10 || greeting}
       </div> <div> <div className="option startBtn" onClick={() => setStartTesting(true)}>Почати</div></div>
       </>: null}
-      {finalAlert && !showBear ? <><div className="pre_testing_alert"><div>Дякую, що ти є в моєму житті!</div><BoyIcon /><FlowerIcon /></div>
+      {finalAlert && !showBear ? <><div className="pre_testing_alert"><div>{lorem10 || gratitude}</div><BoyIcon /><FlowerIcon /></div>
       <div><div className="option startBtn" onClick={() => setShowBear(true)}>Забрати приз</div></div>
       </>: null}
       {showBear ? <><div className="pre_testing_alert"> 
-        <div>Квіти швидко в'януть, а ведмедик тішитиме кохану людину дуже довго.</div><BearIcon /></div></> : null }
+        <div>{lorem10 || finalPhrase}</div><BearIcon /></div></> : null }
     </div> : null}
     { startTesting ? <div className="container">
       <Flashcard flashcard={mutedQuestions[currentQuestion.id]} flip={flip}/>
