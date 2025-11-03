@@ -11,29 +11,29 @@ export const questions = [
          correct: 'Скрябін "Cтарі фотографії"', options: ['Скрябін "Cтарі фотографії"', 'KAZKA "Плакала"', 'WELLBOY "Гуси"', 'Океан Ельзи "Квітка"']},
       { id: 3, question: "За кого тебе прийняла працівниця дитячого інфекційного відділення, коли ми пили чай зранку перед парами?",
          correct: "Дитину", options: ["Лікаря", "Студентку", "Маму дитини", "Дитину"] },
-      { id: 4, question: "Запитання номер пять. Яка ваша думка стосовно такого?",
-         correct: "Правильна відповідь", options: ["Правильна відповідь", "Неправильна", "Невірна", "Неточна"] }
+      { id: 4, question: "Дай відповідь на останнє запитання. Ким ти є для мене?",
+         correct: "Усім переліченим", options: ["Коханою дівчиною", "Бажаною жінкою", "Близьким другом", "Усім переліченим"] }
 ];
 
 export const greeting = "Пройшов місяць, як ми зустрічаємося. Софіє, пропоную тобі пройти цікаве тестування!";
 export const gratitude = "Дякую, що ти є в моєму житті!";
 export const finalPhrase = "Квіти швидко в'януть, а ведмедик тішитиме кохану людину дуже довго."
-export const lorem10 = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt impedit sequi vitae eos porro aperiam quasi."
+// export const lorem10 = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt impedit sequi vitae eos porro aperiam quasi."
 
-const loremOptions = ["lorem1", "lorem2", "lorem3", "lorem4"]
-export const testQuestions = [{
-   id: 0, question: lorem10, correct: "lorem1", options: loremOptions
-},
-{
-   id: 1, question: lorem10, correct: "lorem1", options: loremOptions
-},
-{
-   id: 2, question: lorem10, correct: "lorem1", options: loremOptions
-},
-{
-   id: 3, question: lorem10, correct: "lorem1", options: loremOptions
-},
-{
-   id: 4, question: lorem10, correct: "lorem1", options: loremOptions
-},
-]
+// const loremOptions = ["lorem1", "lorem2", "lorem3", "lorem4"]
+// export const testQuestions = [{
+//    id: 0, question: lorem10, correct: "lorem1", options: loremOptions
+// },
+// {
+//    id: 1, question: lorem10, correct: "lorem1", options: loremOptions
+// },
+// {
+//    id: 2, question: lorem10, correct: "lorem1", options: loremOptions
+// },
+// {
+//    id: 3, question: lorem10, correct: "lorem1", options: loremOptions
+// },
+// {
+//    id: 4, question: lorem10, correct: "lorem1", options: loremOptions
+// },
+// ]

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import {HamburgerIcon, LogoIcon, BoyIcon, FlowerIcon, BearIcon}  from "./icons";
 import { Flashcard } from "./Flashcard";
-import { greeting, questions, gratitude, finalPhrase, lorem10, testQuestions } from "./constants";
+import { greeting, questions, gratitude, finalPhrase } from "./constants";
 export const App = () => {
-  const mutedQuestions = testQuestions.map(item => { // don't forget change back to the questions
+  const mutedQuestions = questions.map(item => { // don't forget change back to the questions
     const newOptions = item.options.map(option => {
       const correctness = option === item.correct ? true : false;
       return {optionName: option, isCorrect: correctness}
@@ -44,14 +44,18 @@ export const App = () => {
     </div>
     {!startTesting ? <div className="container">
       {!finalAlert ? <>
-      <div className="pre_testing_alert">Вже {stringifiedDate}. {lorem10 || greeting}
+      <div className="pre_testing_alert" id="greeting"><div>Сьогодні {stringifiedDate}. </div>{greeting}
       </div> <div> <div className="option startBtn" onClick={() => setStartTesting(true)}>Почати</div></div>
       </>: null}
-      {finalAlert && !showBear ? <><div className="pre_testing_alert"><div>{lorem10 || gratitude}</div><BoyIcon /><FlowerIcon /></div>
+      {finalAlert && !showBear ? <><div className="pre_testing_alert">
+        <div>Результат: {points} з {maxPoints} балів</div>
+        <hr />
+        <BoyIcon /><FlowerIcon />
+        <div className="gratitude">{gratitude}</div></div>
       <div><div className="option startBtn" onClick={() => setShowBear(true)}>Забрати приз</div></div>
       </>: null}
       {showBear ? <><div className="pre_testing_alert"> 
-        <div>{lorem10 || finalPhrase}</div><BearIcon /></div></> : null }
+        <div  className="finalPhrase" >{finalPhrase}</div><BearIcon /></div></> : null }
     </div> : null}
     { startTesting ? <div className="container">
       <Flashcard flashcard={mutedQuestions[currentQuestion.id]} flip={flip}/>

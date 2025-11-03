@@ -8,9 +8,21 @@ body {
   font-family: sans-serif;
   text-align: center;
 }
+hr {
+  color: gray;
+  width: 80%;
+}
 svg {
     width: 50px;
     height: 20px;
+}
+.gratitude {
+  margin-bottom: 40px;
+  color: coral;
+  font-size: 1.5rem;
+}
+.finalPhrase, #greeting {
+  font-size: 1.5rem;
 }
 .pre_testing_alert svg {
   margin: 0 auto;
@@ -85,13 +97,13 @@ svg {
 
 }
 .option {
-  padding-top: 3px;
+  /* padding: 3px 2px; */
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 20px;
   background-color: white;
-  width: 160px;
+  width: 164px;
   border: 1px solid blue;
   color: black;
   border-radius: 2rem;
@@ -350,7 +362,7 @@ svg {
     background-color: white;
     color: black;
     border: 1px solid rgba(100, 58, 122, 0.8);
-    width: 8rem;
+    width: 9rem;
     border-radius: 2rem;
     transition-duration: 0.4s;
     height: 3.2rem;
