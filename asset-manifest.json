@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/MediLab_testing/static/css/main.857b9ad9.css",
-    "main.js": "/MediLab_testing/static/js/main.43262d15.js",
+    "main.css": "/MediLab_testing/static/css/main.e411fcb8.css",
+    "main.js": "/MediLab_testing/static/js/main.8f1ec8ca.js",
     "index.html": "/MediLab_testing/index.html",
-    "main.857b9ad9.css.map": "/MediLab_testing/static/css/main.857b9ad9.css.map",
-    "main.43262d15.js.map": "/MediLab_testing/static/js/main.43262d15.js.map"
+    "main.e411fcb8.css.map": "/MediLab_testing/static/css/main.e411fcb8.css.map",
+    "main.8f1ec8ca.js.map": "/MediLab_testing/static/js/main.8f1ec8ca.js.map"
   },
   "entrypoints": [
-    "static/css/main.857b9ad9.css",
-    "static/js/main.43262d15.js"
+    "static/css/main.e411fcb8.css",
+    "static/js/main.8f1ec8ca.js"
   ]
 }
